@@ -1,5 +1,6 @@
 const question = document.querySelector('#question');
-const choices = document.querySelectorAll('.choice button');
+const choices = document.querySelectorAll('#choice button');
+
 
 let currentQuestion = 0;
 let score = {
@@ -15,97 +16,97 @@ let score = {
 
 const questions = [
   {
-    image: 'https://picsum.photos/200/300?random=1',
+    image: '1',
     question: '문항 1: 이것보다 저것이 더 좋다는 것에 동의하십니까?',
     choices: ['예', '아니오'],
     score: ['N', 'S']
   },
   {
-    image: 'https://picsum.photos/200/300?random=2',
+    image: '2',
     question: '문항 2: 휴대폰을 자주 사용하십니까?',
     choices: ['예', '아니오'],
     score: ['E', 'I']
   },
   {
-    image: 'https://picsum.photos/200/300?random=3',
+    image: '3',
     question: '문항 3: 일을 미루지 않고 바로 처리하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['J', 'P']
   },
   {
-    image: 'https://picsum.photos/200/300?random=4',
+    image: '4',
     question: '문항 4: 누군가가 말을 할 때 집중해서 듣는 편입니까?',
     choices: ['예', '아니오'],
     score: ['S', 'N']
   },
   {
-    image: 'https://picsum.photos/200/300?random=5',
+    image: '5',
     question: '문항 5: 타인과 대화할 때 자신의 생각을 잘 표현할 수 있는 편입니까?',
     choices: ['예', '아니오'],
     score: ['T', 'F']
   },
   {
-    image: 'https://picsum.photos/200/300?random=6',
+    image: '6',
     question: '문항 6: 새로운 사람을 만날 때 친구가 되려고 노력하십니까?',
     choices: ['예', '아니오'],
     score: ['E', 'I']
   },
   {
-    image: 'https://picsum.photos/200/300?random=7',
+    image: '7',
     question: '문항 7: 결정을 내릴 때 감정보다는 논리를 중요시하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['T', 'F']
   },
   {
-    image: 'https://picsum.photos/200/300?random=8',
+    image: '8',
     question: '문항 8: 실용성보다는 이론과 개념을 중요시하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['N', 'S']
   },
   {
-    image: 'https://picsum.photos/200/300?random=9',
+    image: '9',
     question: '문항 9: 주로 외향적인 성격을 가지고 있습니까?',
     choices: ['예', '아니오'],
     score: ['E', 'I']
   },
   {
-    image: 'https://picsum.photos/200/300?random=10',
+    image: '10',
     question: '문항 10: 의견 차이가 있을 때 갈등을 피하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['J', 'P']
     },
     {
-    image: 'https://picsum.photos/200/300?random=11',
+    image: '11',
     question: '문항 11: 문제를 해결하는데 시간이 오래 걸려도 인내심을 가지고 차근차근 해결하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['J', 'P']
     },
     {
-    image: 'https://picsum.photos/200/300?random=12',
+    image: '12',
     question: '문항 12: 자신의 감정을 솔직하게 표현하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['F', 'T']
     },
     {
-    image: 'https://picsum.photos/200/300?random=13',
+    image: '13',
     question: '문항 13: 새로운 상황에 대처하는 데 유연하게 대처하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['P', 'J']
     },
     {
-    image: 'https://picsum.photos/200/300?random=14',
+    image: '14',
     question: '문항 14: 상대방의 의견을 경청하며 이해하려고 노력하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['F', 'T']
     },
     {
-    image: 'https://picsum.photos/200/300?random=15',
+    image: '15',
     question: '문항 15: 여러 가지 일을 동시에 처리하는 것을 좋아하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['S', 'N']
     },
     {
-    image: 'https://picsum.photos/200/300?random=16',
+    image: '16',
     question: '문항 16: 다른 사람들의 주의를 받는 것을 좋아하는 편입니까?',
     choices: ['예', '아니오'],
     score: ['E', 'I']
@@ -116,22 +117,24 @@ const questions = [
 function loadQuestion() {
   const q = questions[currentQuestion];
   question.innerHTML = `
-    <img src="${q.image}">
+    <img src="https://picsum.photos/400/300?random=${q.image}">
     <p>${q.question}</p>
     <div class="choice">
       <button id="choice1" class="btn">${q.choices[0]}</button>
       <button id="choice2" class="btn">${q.choices[1]}</button>
     </div>
   `;
+  // 선택지 버튼을 선택하여 nextQuestion 함수가 실행되도록 이벤트 리스너 추가
+  const choices = document.querySelectorAll('.btn');
   choices.forEach((choice) => {
     choice.addEventListener('click', () => {
-      nextQuestion(choice.textContent);
+      nextQuestion(choice.id);
     });
   });
 }
 
 
-function nextQuestion(choice) {
+function nextQuestion(choiceId) {
   const selectedScore = {
     I: 0,
     E: 0,
@@ -144,7 +147,7 @@ function nextQuestion(choice) {
   };
   
   if (currentQuestion < questions.length - 1) {
-    if (choice === questions[currentQuestion].choices[0]) {
+    if (choiceId === 'choice1') {
       selectedScore[questions[currentQuestion].score[0]] = 1;
     } else {
       selectedScore[questions[currentQuestion].score[1]] = 1;
@@ -157,7 +160,6 @@ function nextQuestion(choice) {
     currentQuestion++;
     loadQuestion();
   } else {
-    // 결과를 계산하고 출력하는 코드를 작성합니다.
     const result = calculateResult(score);
     const resultText = getResultText(result);
     const resultImage = getResultImage(result);
@@ -247,35 +249,33 @@ function getResultText(result) {
   return resultText;
 }
 
+
 function getResultImage(result) {
-  let resultImage = '';
+  let resultImage = 'https://picsum.photos/400/300?random=1';
   switch(result) {
     case 'ISTJ':
     case 'ISFJ':
     case 'INFJ':
     case 'INTJ':
-      resultImage = 'https://example.com/result1.jpg';
+      // resultImage = 'https://example.com/result1.jpg';
       break;
     case 'ISTP':
     case 'ISFP':
     case 'INFP':
     case 'INTP':
-      resultImage = 'https://example.com/result2.jpg';
       break;
     case 'ESTP':
     case 'ESFP':
     case 'ENFP':
     case 'ENTP':
-      resultImage = 'https://example.com/result3.jpg';
       break;
     case 'ESTJ':
     case 'ESFJ':
     case 'ENFJ':
     case 'ENTJ':
-      resultImage = 'https://example.com/result4.jpg';
       break;
     default:
-      resultImage = '';
+      resultImage = 'https://picsum.photos/400/300?random=1';
   }
   return resultImage;
 }
