@@ -1,50 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
 
-      body {
-        font-family: 'Noto Sans KR', sans-serif;
-        margin: 0;
-        padding: 0;
-      }
+#question {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: center;
-      }
+#question img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-      .question {
-        margin-top: 50px;
-        margin-bottom: 30px;
-      }
+#question p {
+  margin-bottom: 20px;
+}
 
-      .question h2 {
-        margin-bottom: 20px;
-      }
+.choice {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
-      .answer {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 50px;
-      }
-
-      .answer button {
-        font-size: 20px;
-        padding: 10px 20px;
-        margin-right: 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: #ececec;
-        color: #444;
-      }
-
-      .answer button:last-child {
-        margin-right: 0;
-      }
-
-      .result {
-        margin-top: 50px;
-        margin-bottom: 50px;
-      }
-
-      .result img {
-        max-width: 100%;
-      }
+.choice button {
+  margin: 0 10px;
+  padding: 10px;
+  font-size: 16px;
+}

@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>2지선다 문항 웹페이지</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="question">
-        <h2>1. 이 문항은 예시입니다. 예시를 선택해주세요.</h2>
-      </div>
-      <div class="answer">
-        <button>예시 1</button>
-        <button>예시 2</button>
-      </div>
-      <div class="result">
-        <img src="" alt="결과 이미지" />
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2지선다 문항</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="question">
+    <img src="https://example.com/question1.jpg">
+    <p>문항 1: 이것보다 저것이 더 좋다는 것에 동의하십니까?</p>
+    <div class="choice">
+      <button id="choice1" class="btn">예</button>
+      <button id="choice2" class="btn">아니오</button>
     </div>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
 </html>
