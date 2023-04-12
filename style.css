@@ -42,6 +42,7 @@ body {
   flex-direction: column;
   gap: 10px;
   justify-content: center; /* 가운데 정렬 */
+  margin-bottom: 50px;
 }
 
 .btn {
