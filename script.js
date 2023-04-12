@@ -123,7 +123,13 @@ function loadQuestion() {
       <button id="choice2" class="btn">${q.choices[1]}</button>
     </div>
   `;
+  choices.forEach((choice) => {
+    choice.addEventListener('click', () => {
+      nextQuestion(choice.textContent);
+    });
+  });
 }
+
 
 function nextQuestion(choice) {
   const selectedScore = {
@@ -172,6 +178,7 @@ function nextQuestion(choice) {
     `;
   }
 }
+
 
 function calculateResult(score) {
   let result = '';
