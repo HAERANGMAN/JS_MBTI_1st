@@ -18,17 +18,13 @@ body {
 
 /* 문항 */
 .question {
-  margin-top: 20px;
-  display: flex; /* Flexbox 레이아웃 적용 */
-  flex-direction: column; /* 세로 방향으로 배치 */
-  align-items: center; /* 가운데 정렬 */
+  margin-top: 0px;
 }
 
 .question p {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
-  text-align: center; /* 가운데 정렬 */
 }
 
 .question img {
@@ -39,10 +35,9 @@ body {
 
 .choice {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* 선택지를 세로로 배치 */
   gap: 10px;
-  justify-content: center; /* 가운데 정렬 */
-  margin-bottom: 50px;
+  margin: 50px 0px;
 }
 
 .btn {

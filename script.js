@@ -2,7 +2,7 @@
 //  https://haerangman.github.io/MBTI_1st/
 
 
-const question = document.querySelector('#question');
+const question = document.querySelector('.question');
 const choices = document.querySelectorAll('#choice button');
 
 
