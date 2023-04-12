@@ -59,3 +59,7 @@ body {
 .btn:hover {
   background-color: #ccc;
 }
+
+#coupang{
+  width: 100%;
+}
