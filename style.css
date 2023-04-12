@@ -1,0 +1,50 @@
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .question {
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+
+      .question h2 {
+        margin-bottom: 20px;
+      }
+
+      .answer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+      }
+
+      .answer button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #ececec;
+        color: #444;
+      }
+
+      .answer button:last-child {
+        margin-right: 0;
+      }
+
+      .result {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      .result img {
+        max-width: 100%;
+      }
